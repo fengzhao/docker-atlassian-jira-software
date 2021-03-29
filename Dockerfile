@@ -1,4 +1,4 @@
-FROM openjdk:8-alpine
+FROM chinafengzhao/openjdk-alpine-with-chinese-timezone:latest
 
 # Configuration variables.
 ENV JIRA_HOME     /var/atlassian/jira
