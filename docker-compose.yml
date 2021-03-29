@@ -1,7 +1,7 @@
 version: '3.4'
 services:
   jira:
-    image: chinafengzhao/jira-software:8.11.0
+    image: ghcr.io/fengzhao/jira-software:latest
     user: root
     container_name: jira-software
     ports:
