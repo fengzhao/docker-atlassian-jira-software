@@ -1,6 +1,7 @@
 version: '3.4'
 services:
   jira:
+    # 国内镜像  image: registry.cn-shenzhen.aliyuncs.com/fengzhao/jira-software:latest 
     image: ghcr.io/fengzhao/jira-software:latest
     user: root
     container_name: jira-software
@@ -8,9 +9,13 @@ services:
       - "8080:8080"
     # restart: always
     environment:
-      - X_PROXY_NAME:jira.qh-1.cn
+      # 反代域名
+      - X_PROXY_NAME:jira.xxxx.com
+      # 反代端口
       - X_PROXY_PORT:80
+      # 反代访问协议
       - X_PROXY_SCHEME:http
+      
       - CATALINA_OPTS='-Xms4096m -Xmx8192m'  
     networks:
       - jira
