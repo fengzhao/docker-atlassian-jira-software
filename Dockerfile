@@ -1,4 +1,5 @@
-FROM  gchr.io/fengzhao/openjdk-alpine-with-chinese-timezone
+FROM ghcr.io/fengzhao/openjdk:8-jdk-alpine-chinese-timezone
+
 
 # Configuration variables.
 ENV JIRA_HOME     /var/atlassian/jira
