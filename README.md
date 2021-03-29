@@ -1,7 +1,9 @@
-# jira-software in docker
+# jira-software install 
 
-在 docker 中快速部署 jira-software
+## 在 docker 中快速部署 jira-software
 
+
+### 安装
 
 ```shell
 
@@ -22,3 +24,17 @@ docker-compose up -d
 ```
 
 
+
+
+### 安装并激活
+
+启动后，就可以在浏览器中访问并设置下一步。 http://ip:8080
+
+配置数据库连接，然后下一步设置激活，讲服务器ID复制下来，执行下面这个命令，获取许可证：
+
+
+```shell
+java -jar atlassian-agent.jar  -d -m test@test.com -n BAT   -p jira -o http://192.168.0.89  -s BY9B-GWD1-1C78-K2DE
+```
+
+输入许可证，继续配置下一步
