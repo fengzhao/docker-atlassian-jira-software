@@ -16,21 +16,27 @@ docker容器 /data/jira/docker-compose.yml  ，其中包含jira-software和jira-
     jira-software: 关键数据和目录：
                 
            宿主机中容器外：jira容器数据（含附件等）： /data/jira/jira-data/ （容器挂载到宿主机中）
+           
+           
+           
+     jira备份需要备份的数据：
+
+        1、 数据库   
+
+        2、 数据目录（含附件和其他等）
+
+        3、 安装包       
     
 ```    
    
    
    
- jira备份需要备份的数据：
-
-1、 数据库   
-
-2、 数据目录（含附件和其他等）
-
-3、 安装包
 
 
-备份方法和备份策略：
+
+### 备份方法和备份策略：
+
+```
 
 备份地址：10.10.20.199:/backup/jira/jira-data/
 
@@ -40,11 +46,10 @@ docker容器 /data/jira/docker-compose.yml  ，其中包含jira-software和jira-
 
 数据目录备份： 每天凌晨2:00在10.10.20.199上执行rsync，将原jira数据目录同步到199的/data/jira/jira-data/。
 
-安装包备份：docker容器，已提交到dockerhub，可以直接Pull，也可以从本项目构建。
+安装包备份：docker容器，已提交到dockerhub，可以直接pull，也可以从本项目构建。
 
 
-
-
+```
 
 
 **注意事项：jira用户上传的附件，在服务器端都会被重命名并去掉后缀。可以在 jira管理-系统-附件 中查看配置路径，默认在容器中的/var/atlassian/jira/data/attachments路径**
